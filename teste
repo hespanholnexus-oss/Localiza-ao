@@ -1,0 +1,25 @@
+function doGet(e) {
+
+  var latitude = e.parameter.lat;
+  var longitude = e.parameter.lon;
+
+  var email = "rr.hespanhol4@gmail.com";
+
+  var assunto = "🐾 Pet NFC - Monikão foi localizado";
+
+  var mensagem =
+    "Alguém acessou a identificação do seu pet.\n\n" +
+    "Pet: Monikão\n\n" +
+    "Localização:\n" +
+    "https://maps.google.com/?q=" +
+    latitude + "," + longitude;
+
+  MailApp.sendEmail(
+    email,
+    assunto,
+    mensagem
+  );
+
+  return ContentService.createTextOutput("OK");
+
+}
